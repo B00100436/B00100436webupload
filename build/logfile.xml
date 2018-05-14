@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Project Test Suite" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.028829">
+    <testsuite name="App\Test\SimpleTest" file="A:\College Stuff\Web Software Engineering\Symfony4\recipeproject\tests\SimpleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.028829">
+      <testcase name="testOnePlusOneEqualsTwo" class="App\Test\SimpleTest" classname="App.Test.SimpleTest" file="A:\College Stuff\Web Software Engineering\Symfony4\recipeproject\tests\SimpleTest.php" line="10" assertions="1" time="0.028829"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

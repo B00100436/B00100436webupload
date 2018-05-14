@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pols Wonderful Recipes{% endblock %}
+
+{% block body %}
+    <h1>Welcome {% if is_granted('ROLE_USER') %} <strong>{{ app.user.username }}</strong> {% endif %} to our Fabulous Recipe Page</h1>
+
+    <p> {% if is_granted('ROLE_USER') %} <strong>{{ app.user.username }}</strong> , You are logged in please feel free to create new recipes.
+
+{% else %}
+     Please <a href="{{ url('login') }}">login</a> to create new recipes but feel free to  <a href="{{ url('recipe_index') }}">browse our collection</a> or leave a comment.</p>
+{% endif %}
+{% endblock %}

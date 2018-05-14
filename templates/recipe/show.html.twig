@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recipe{% endblock %}
+
+{% block body %}
+
+    <h1>Recipe</h1>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <td>{{ recipe.title }}</td>
+        </tr>
+        <tr>
+            <th>Summary</th>
+            <td>{{ recipe.summary }}</td>
+        </tr>
+        <tr>
+            <th>Steps</th>
+            <td>{{ recipe.steps }}</td>
+        </tr>
+        <tr>
+            <th>Ingredients</th>
+            <td>{{ recipe.ingredients }}</td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>{{ recipe.author }}</td>
+        </tr>
+
+    </table>
+
+    <a href="{{ path('recipe_index') }}">back to list </a>
+
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('recipe_edit', {'id': recipe.id}) }}"> | edit</a>
+    {% endif %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        {% include 'recipe/_delete_form.html.twig' with {'identifier': recipe.id} only %}
+    {% endif %}
+
+{% endblock %}
